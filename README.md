@@ -52,3 +52,55 @@ Se integró Resilience4j para mejorar la resiliencia y la capacidad de recuperac
 Se exploró el monitoreo y observabilidad utilizando herramientas como Zipkin, Actuator, Micrometer, OpenTelemetry, Prometheus y Grafana.
 Estas herramientas se combinaron para administrar datos de telemetría, como rastreos, métricas y registros.
 En resumen, tu proyecto de introducción a los microservicios aborda aspectos clave como la autenticación, la seguridad en capas profundas, la gestión de órdenes y productos, y la observabilidad. Además, utiliza tecnologías modernas y herramientas para asegurar la escalabilidad y la resiliencia del sistema.
+
+## ENDPOINTS
+
+### AuthController
+
+| Method   | Route                                 | Description                                        |
+| -------- | ------------------------------------- | -------------------------------------------------- |
+| POST     | /api/auth/register                    | Register a new user and receive a JWT token       |
+| POST     | /api/auth/authenticate                | Use the generated token to authenticate the user   |
+| PUT      | /api/auth/promote-to-admin/{username} | Promote a user to an admin role                    |
+
+### UserController
+
+| Method   | Route                                 | Description                                        |
+| -------- | ------------------------------------- | -------------------------------------------------- |
+| GET      | /api/user/get-all?page=0&size=4       | Retrieve all users, with optional pagination       |
+| GET      | /api/user/{id}                        | Get a user by ID                                   |
+| DELETE   | /api/user/{id}                        | Delete a user by ID                                |
+| PUT      | /api/user/{id}                        | Update a user by ID                                |
+| GET      | /api/user/by-username/{username}      | Get a user by username                             |
+| GET      | /api/user/by-name/{name}              | Get a user by name                                 |
+| GET      | /api/user/by-email/{email}            | Get a user by email                                |
+
+### PurchaseController
+
+| Method   | Route                                 | Description                                        |
+| -------- | ------------------------------------- | -------------------------------------------------- |
+| POST     | /api/purchase/create                  | Create a new purchase                              |
+| GET      | /api/purchase/{id}                    | Get a purchase by ID                               |
+| GET      | /api/purchase/user/{username}         | Get purchases by username                          |
+| DELETE   | /api/purchase/{id}                    | Delete a purchase by ID                            |
+| PUT      | /api/purchase/{id}                    | Update a purchase by ID                            |
+
+### OrderDetailsController
+
+| Method   | Route                                 | Description                                        |
+| -------- | ------------------------------------- | -------------------------------------------------- |
+| POST     | /api/order-detail/create              | Create a new order detail                          |
+| DELETE   | /api/order-detail/{id}                | Delete an order detail by ID                       |
+| PUT      | /api/order-detail/update              | Update an order detail                             |
+| GET      | /api/order-detail/by-purchase/{id}    | Get order details by purchase ID                  |
+
+### ProductController
+
+| Method   | Route                                 | Description                                        |
+| -------- | ------------------------------------- | -------------------------------------------------- |
+| POST     | /api/product/create                   | Create a new Product                               |
+| GET      | /api/product/{id}                     | Get a Product by ID                                |
+| PUT      | /api/product/{id}                     | Update a Product by ID                             |
+| DEL      | /api/product/{id}                     | Delete a Product by ID                             |
+| GET      | /api/product/all-products             | Get all Products                                   |
+
